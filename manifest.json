@@ -1,0 +1,27 @@
+{
+  "name": "Resources download",
+  "description": "Download resources that match a pattern",
+  "version": "1.0",
+  "manifest_version": 3,
+  "author":"Sara Craba",
+  "background": {
+	  "service_worker": "background.js"
+  },
+  "action": {
+	  "default_title": "Resources download",
+	  "default_popup": "popup.html",
+	  "default_icon": "icon.png"
+  },
+  "content_scripts": [
+		{
+			"js": ["content.js"],
+		  "matches": ["<all_urls>"],
+			"run_at": "document_end"
+	  }
+  ],
+  "permissions": [
+		"tabs",		     
+		"activeTab",
+ 	  "downloads"
+   ]
+}
